@@ -17,6 +17,13 @@ plugins {
     id("nowinandroid.android.library")
     kotlin("kapt")
     id("nowinandroid.spotless")
+    id("shot")
+}
+
+android {
+    defaultConfig {
+        testApplicationId = "com.google.samples.apps.nowinandroid"
+    }
 }
 
 dependencies {

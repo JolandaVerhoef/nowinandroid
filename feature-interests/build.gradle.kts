@@ -20,6 +20,12 @@ plugins {
     kotlin("kapt")
     id("dagger.hilt.android.plugin")
     id("nowinandroid.spotless")
+    id("shot")
+}
+android {
+    defaultConfig {
+        testApplicationId = "com.google.samples.apps.nowinandroid"
+    }
 }
 
 android {
