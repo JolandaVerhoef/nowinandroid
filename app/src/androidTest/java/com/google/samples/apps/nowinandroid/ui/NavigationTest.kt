@@ -24,6 +24,7 @@ import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.test.espresso.Espresso
 import androidx.test.espresso.NoActivityResumedException
+import com.karumi.shot.ScreenshotTest
 import com.google.samples.apps.nowinandroid.MainActivity
 import com.google.samples.apps.nowinandroid.R
 import dagger.hilt.android.testing.BindValue
@@ -38,7 +39,7 @@ import org.junit.rules.TemporaryFolder
  * Tests all the navigation flows that are handled by the navigation library.
  */
 @HiltAndroidTest
-class NavigationTest {
+class NavigationTest : ScreenshotTest {
 
     /**
      * Manages the components' state and is used to perform injection on your test
@@ -89,6 +90,8 @@ class NavigationTest {
             // VERIFY for you is selected
             onNodeWithText(forYou).assertIsSelected()
         }
+
+        compareScreenshot(composeTestRule)
     }
 
     // TODO: implement tests related to navigation & resetting of destinations (b/213307564)

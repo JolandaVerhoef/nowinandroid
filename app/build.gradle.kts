@@ -21,6 +21,7 @@ plugins {
     id("jacoco")
     id("dagger.hilt.android.plugin")
     id("nowinandroid.spotless")
+    id("shot")
 }
 
 android {
@@ -30,7 +31,7 @@ android {
         versionName = "0.0.1" // X.Y.Z; X = Major, Y = minor, Z = Patch level
 
         // Custom test runner to set up Hilt dependency graph
-        testInstrumentationRunner = "com.google.samples.apps.nowinandroid.core.testing.NiaTestRunner"
+        testInstrumentationRunner = "com.google.samples.apps.nowinandroid.NiaTestRunner"
         vectorDrawables {
             useSupportLibrary = true
         }
@@ -67,6 +68,10 @@ android {
             isIncludeAndroidResources = true
         }
     }
+}
+
+shot {
+    applicationId = "com.google.samples.apps.nowinandroid"
 }
 
 dependencies {
