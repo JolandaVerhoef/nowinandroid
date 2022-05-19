@@ -14,17 +14,17 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.nowinandroid.core.testing
+package com.google.samples.apps.nowinandroid
 
 import android.app.Application
 import android.content.Context
-import androidx.test.runner.AndroidJUnitRunner
+import com.karumi.shot.ShotTestRunner
 import dagger.hilt.android.testing.HiltTestApplication
 
 /**
  * A custom runner to set up the instrumented application class for tests.
  */
-class NiaTestRunner : AndroidJUnitRunner() {
+class NiaTestRunner : ShotTestRunner() {
     override fun newApplication(cl: ClassLoader?, name: String?, context: Context?): Application {
         return super.newApplication(cl, HiltTestApplication::class.java.name, context)
     }
